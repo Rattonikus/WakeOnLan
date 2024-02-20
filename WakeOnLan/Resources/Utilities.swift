@@ -7,5 +7,26 @@
 
 import Foundation
 
-let demoComputer : ComputerItem = ComputerItem(ComputerName: "Example", MacAddress: "00:00:00:00:00", ipAddress: "128.0.0.1", port: 1)
+let demoComputer : ComputerItem = ComputerItem(computerName: "Example", macAddress: "00:00:00:00:00", ipAddress: "128.0.0.1", port: 1)
+
+func loadJSON (from file : String) -> [ComputerItem]
+{
+    do
+    {
+        if let dataSourceURL = Bundle.main.url(forResource: file, withExtension: "json")
+        {
+            let data = try! Data(contentsOf: dataSourceURL)
+            let decoder = JSONDecoder()
+            
+            let results = try decoder.decode([ComputerItem].self, from: data)
+            return results
+        }
+    }
+    catch
+    {
+        print(error.localizedDescription)
+    }
+    return [] //badbadbad
+    
+}
 

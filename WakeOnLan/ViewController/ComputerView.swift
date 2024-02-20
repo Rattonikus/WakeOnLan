@@ -19,7 +19,7 @@ struct ComputerView: View
             Image("computerPlace")
             HStack
             {
-                Text(rowComputer.ComputerName)
+                Text(rowComputer.computerName)
                     .bold()
             }
             Text(rowComputer.ipAddress)

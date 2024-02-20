@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ComputerItem
+struct ComputerItem : Codable
 {
-    var ComputerName : String
-    var MacAddress : String
+    var computerName : String
+    var macAddress : String
     var ipAddress : String
     var port : Int
 }
