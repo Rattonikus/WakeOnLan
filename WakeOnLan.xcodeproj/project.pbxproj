@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930771552B84703000D07CE6 /* savedComputers.json in Sources */ = {isa = PBXBuildFile; fileRef = 930771542B84703000D07CE6 /* savedComputers.json */; };
+		930771572B8470EF00D07CE6 /* ComputerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930771562B8470EF00D07CE6 /* ComputerItem.swift */; };
+		930771592B84720F00D07CE6 /* ComputerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930771582B84720F00D07CE6 /* ComputerView.swift */; };
+		9307715B2B84732D00D07CE6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9307715A2B84732D00D07CE6 /* Utilities.swift */; };
 		931787402B846E300006FB4C /* WakeOnLanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9317873F2B846E300006FB4C /* WakeOnLanApp.swift */; };
 		931787422B846E300006FB4C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931787412B846E300006FB4C /* MainView.swift */; };
 		931787442B846E300006FB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931787432B846E300006FB4C /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930771542B84703000D07CE6 /* savedComputers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = savedComputers.json; sourceTree = "<group>"; };
+		930771562B8470EF00D07CE6 /* ComputerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerItem.swift; sourceTree = "<group>"; };
+		930771582B84720F00D07CE6 /* ComputerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerView.swift; sourceTree = "<group>"; };
+		9307715A2B84732D00D07CE6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9317873C2B846E300006FB4C /* WakeOnLan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeOnLan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9317873F2B846E300006FB4C /* WakeOnLanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeOnLanApp.swift; sourceTree = "<group>"; };
 		931787412B846E300006FB4C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -34,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930771532B84701000D07CE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				930771542B84703000D07CE6 /* savedComputers.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		931787332B846E300006FB4C = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +88,10 @@
 		9317874D2B846E7D0006FB4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				930771532B84701000D07CE6 /* Data */,
 				931787432B846E300006FB4C /* Assets.xcassets */,
+				9317873F2B846E300006FB4C /* WakeOnLanApp.swift */,
+				9307715A2B84732D00D07CE6 /* Utilities.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -81,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				931787412B846E300006FB4C /* MainView.swift */,
+				930771582B84720F00D07CE6 /* ComputerView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -89,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				931787502B846EA10006FB4C /* Awake.swift */,
-				9317873F2B846E300006FB4C /* WakeOnLanApp.swift */,
+				930771562B8470EF00D07CE6 /* ComputerItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,8 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930771552B84703000D07CE6 /* savedComputers.json in Sources */,
 				931787422B846E300006FB4C /* MainView.swift in Sources */,
+				9307715B2B84732D00D07CE6 /* Utilities.swift in Sources */,
 				931787402B846E300006FB4C /* WakeOnLanApp.swift in Sources */,
+				930771592B84720F00D07CE6 /* ComputerView.swift in Sources */,
+				930771572B8470EF00D07CE6 /* ComputerItem.swift in Sources */,
 				931787512B846EA10006FB4C /* Awake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
