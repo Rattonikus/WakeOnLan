@@ -7,7 +7,7 @@
 
 import Foundation
 
-let demoComputer : ComputerItem = ComputerItem(computerName: "a", ipAddress: "a", macAddress: "a", port: 1)
+let demoComputer : ComputerItem = ComputerItem(computerName: "Example Name", ipAddress: "Your IP here", macAddress: "Your Mac Address Here", port: 1)
 
 func loadJSON (from file : String) -> [ComputerItem]
 {

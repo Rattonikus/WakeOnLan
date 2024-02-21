@@ -19,6 +19,7 @@
 		931787512B846EA10006FB4C /* Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931787502B846EA10006FB4C /* Awake.swift */; };
 		932807C52B85907D009CDE87 /* addComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932807C42B85907D009CDE87 /* addComputer.swift */; };
 		932807C72B859121009CDE87 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932807C62B859121009CDE87 /* InputField.swift */; };
+		9394DC4B2B85BF3B00043B8A /* editComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9394DC4A2B85BF3B00043B8A /* editComputer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		931787502B846EA10006FB4C /* Awake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Awake.swift; path = ../../../../../../Downloads/Awake.swift; sourceTree = "<group>"; };
 		932807C42B85907D009CDE87 /* addComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addComputer.swift; sourceTree = "<group>"; };
 		932807C62B859121009CDE87 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		9394DC4A2B85BF3B00043B8A /* editComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editComputer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				930771582B84720F00D07CE6 /* ComputerView.swift */,
 				932807C42B85907D009CDE87 /* addComputer.swift */,
 				932807C62B859121009CDE87 /* InputField.swift */,
+				9394DC4A2B85BF3B00043B8A /* editComputer.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				932807C52B85907D009CDE87 /* addComputer.swift in Sources */,
 				9307715D2B84772000D07CE6 /* ComputerItemStore.swift in Sources */,
 				930771572B8470EF00D07CE6 /* ComputerItem.swift in Sources */,
+				9394DC4B2B85BF3B00043B8A /* editComputer.swift in Sources */,
 				931787512B846EA10006FB4C /* Awake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

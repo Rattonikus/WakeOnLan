@@ -14,6 +14,9 @@ struct ContentView: View
     @State private var searchedText : String = ""
     @State var canShow : Bool = true
     @State var showAddComputer : Bool = false
+    @State var showEditComputer : Bool = false
+    @State var editIndex : Int = 0
+    
 
     private var filteredComputerListResult : [ComputerItem]
     {
@@ -48,12 +51,14 @@ struct ContentView: View
                     {
                         row in
                         ComputerView(rowComputer: filteredComputerListResult[row])
+                            .swipeActions(edge: .leading, allowsFullSwipe: false)
+                            {
+                                Button("", systemImage: "pencil", action: {editIndex = row; showEditComputer.toggle()})
+                            }
+                            
                     }
                     .onDelete(perform: removeComputerItems)
-                    .swipeActions(edge: .leading, allowsFullSwipe: false)
-                    {
-                        Button("", systemImage: "edit", action: {print("hi")})
-                    }
+                    
                 }
             }
             .navigationTitle("Computers")
@@ -69,10 +74,11 @@ struct ContentView: View
                     }
                 }
             }
-            .sheet(isPresented: $showAddComputer)
-            {
-                addComputer(with: "", having: "")
-        
+            .sheet(isPresented: $showAddComputer) {
+                addComputer(computer: demoComputer, maxIndex: filteredComputerListResult.count)
+            }
+            .sheet(isPresented: $showEditComputer) {
+                editComputer(computer: filteredComputerListResult[editIndex], index: editIndex)
             }
         }
     }
