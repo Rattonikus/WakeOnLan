@@ -14,16 +14,18 @@ struct ComputerView: View
     
     var body: some View
     {
-        VStack
+        
+        HStack
         {
             Image("computerPlace")
-            HStack
+            VStack
             {
                 Text(rowComputer.computerName)
                     .bold()
+                Text(rowComputer.ipAddress)
+                    .font(.subheadline)
             }
-            Text(rowComputer.ipAddress)
-                .font(.subheadline)
+            
                 
                 
         }

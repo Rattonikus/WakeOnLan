@@ -10,7 +10,7 @@ import Foundation
 struct ComputerItem : Codable
 {
     var computerName : String
-    var macAddress : String
     var ipAddress : String
+    var macAddress : String
     var port : Int
 }

@@ -8,10 +8,17 @@
 import SwiftUI
 
 @main
-struct WakeOnLanApp: App {
-    var body: some Scene {
-        WindowGroup {
+struct WakeOnLanApp: App 
+{
+    var body: some Scene
+    {
+        @StateObject var storedComputers = ComputerItemStore(computers: loadJSON(from: "computer") )
+
+        WindowGroup
+        {
             ContentView()
+                .environmentObject(storedComputers)
+
         }
     }
 }

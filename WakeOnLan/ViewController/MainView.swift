@@ -25,7 +25,7 @@ struct ContentView: View
             {
                 $0.computerName.lowercased().contains(searchedText.lowercased())
                 ||
-                $0.ipAddress.lowercased().contains(searchedText.lowercased())
+                $0.macAddress.lowercased().contains(searchedText.lowercased())
                 ||
                 String($0.port) == searchedText
             }
@@ -63,5 +63,5 @@ struct ContentView: View
 
 #Preview {
     ContentView()
-        .environmentObject(ComputerItemStore(computers: loadJSON(from: "savedComputers") as! [ComputerItem]))
+        .environmentObject(ComputerItemStore(computers: loadJSON(from: "computer") as! [ComputerItem]))
 }

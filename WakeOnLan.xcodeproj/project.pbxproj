@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		930771552B84703000D07CE6 /* savedComputers.json in Sources */ = {isa = PBXBuildFile; fileRef = 930771542B84703000D07CE6 /* savedComputers.json */; };
+		9305A68A2B858D4800487CFF /* computer.json in Resources */ = {isa = PBXBuildFile; fileRef = 9305A6892B858D4800487CFF /* computer.json */; };
 		930771572B8470EF00D07CE6 /* ComputerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930771562B8470EF00D07CE6 /* ComputerItem.swift */; };
 		930771592B84720F00D07CE6 /* ComputerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930771582B84720F00D07CE6 /* ComputerView.swift */; };
 		9307715B2B84732D00D07CE6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9307715A2B84732D00D07CE6 /* Utilities.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		930771542B84703000D07CE6 /* savedComputers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = savedComputers.json; sourceTree = "<group>"; };
+		9305A6892B858D4800487CFF /* computer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = computer.json; sourceTree = "<group>"; };
 		930771562B8470EF00D07CE6 /* ComputerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerItem.swift; sourceTree = "<group>"; };
 		930771582B84720F00D07CE6 /* ComputerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerView.swift; sourceTree = "<group>"; };
 		9307715A2B84732D00D07CE6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		930771532B84701000D07CE6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				930771542B84703000D07CE6 /* savedComputers.json */,
+				9305A6892B858D4800487CFF /* computer.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -175,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9305A68A2B858D4800487CFF /* computer.json in Resources */,
 				931787472B846E300006FB4C /* Preview Assets.xcassets in Resources */,
 				931787442B846E300006FB4C /* Assets.xcassets in Resources */,
 			);
@@ -187,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				930771552B84703000D07CE6 /* savedComputers.json in Sources */,
 				931787422B846E300006FB4C /* MainView.swift in Sources */,
 				9307715B2B84732D00D07CE6 /* Utilities.swift in Sources */,
 				931787402B846E300006FB4C /* WakeOnLanApp.swift in Sources */,
