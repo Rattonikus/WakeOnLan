@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View 
 {
+    
     @EnvironmentObject var computerData : ComputerItemStore
     @State private var searchedText : String = ""
     @State var canShow : Bool = true
+    @State var showAddComputer : Bool = false
 
     private var filteredComputerListResult : [ComputerItem]
     {
@@ -30,35 +32,56 @@ struct ContentView: View
                 String($0.port) == searchedText
             }
         }
-        
     }
+    
+    
     
     var body: some View
     {
         NavigationStack
         {
-            VStack()
+            List
             {
-                
-                
-                List
+                Section("", isExpanded: $canShow)
                 {
-                    
-                    Section("Computers", isExpanded: $canShow)
+                    ForEach(filteredComputerListResult.indices, id: \.self)
                     {
-                        ForEach(filteredComputerListResult.indices, id: \.self)
-                        {
-                            row in
-                            
-                            ComputerView(rowComputer: filteredComputerListResult[row])
-                        }
+                        row in
+                        ComputerView(rowComputer: filteredComputerListResult[row])
+                    }
+                    .onDelete(perform: removeComputerItems)
+                    .swipeActions(edge: .leading, allowsFullSwipe: false)
+                    {
+                        Button("", systemImage: "edit", action: {print("hi")})
                     }
                 }
             }
-        .padding()
-        .navigationTitle("Computers")
+            .navigationTitle("Computers")
+            .listStyle(GroupedListStyle())
+            .background(Color.blue)
+            .toolbar
+            {
+                ToolbarItem(placement: .topBarTrailing)
+                {
+                    Button (action: {self.showAddComputer.toggle()})
+                    {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showAddComputer)
+            {
+                addComputer(with: "", having: "")
+        
+            }
         }
     }
+    
+    private func removeComputerItems(at offsets : IndexSet) -> Void
+    {
+        computerData.computers.remove(atOffsets: offsets)
+    }
+       
 }
 
 #Preview {
