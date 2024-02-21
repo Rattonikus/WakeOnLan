@@ -41,44 +41,60 @@ struct ContentView: View
     
     var body: some View
     {
-        NavigationStack
+        if (filteredComputerListResult.isEmpty)
         {
-            List
+            VStack
             {
-                Section("", isExpanded: $canShow)
-                {
-                    ForEach(filteredComputerListResult.indices, id: \.self)
+                Text("No computers added")
+                Button ("Add one now?", action: {self.showAddComputer.toggle()})
+                    .sheet(isPresented: $showAddComputer)
                     {
-                        row in
-                        ComputerView(rowComputer: filteredComputerListResult[row])
-                            .swipeActions(edge: .leading, allowsFullSwipe: false)
-                            {
-                                Button("", systemImage: "pencil", action: {editIndex = row; showEditComputer.toggle()})
-                            }
-                            
+                        addComputer(computer: demoComputer, maxIndex: filteredComputerListResult.count)
                     }
-                    .onDelete(perform: removeComputerItems)
-                    
-                }
             }
-            .navigationTitle("Computers")
-            .listStyle(GroupedListStyle())
-            .background(Color.blue)
-            .toolbar
+        }
+        else
+        {
+            NavigationStack
             {
-                ToolbarItem(placement: .topBarTrailing)
+                List
                 {
-                    Button (action: {self.showAddComputer.toggle()})
+                    Section("", isExpanded: $canShow)
                     {
-                        Image(systemName: "plus")
+                        ForEach(filteredComputerListResult.indices, id: \.self)
+                        {
+                            row in
+                            ComputerView(rowComputer: filteredComputerListResult[row])
+                                .swipeActions(edge: .leading, allowsFullSwipe: false)
+                                {
+                                    Button("", systemImage: "pencil", action: {editIndex = row; showEditComputer.toggle()})
+                                }
+                                
+                        }
+                        .onDelete(perform: removeComputerItems)
+                        
                     }
                 }
-            }
-            .sheet(isPresented: $showAddComputer) {
-                addComputer(computer: demoComputer, maxIndex: filteredComputerListResult.count)
-            }
-            .sheet(isPresented: $showEditComputer) {
-                editComputer(computer: filteredComputerListResult[editIndex], index: editIndex)
+                .navigationTitle("Computers")
+                .listStyle(GroupedListStyle())
+                .background(Color.blue)
+                .toolbar
+                {
+                    ToolbarItem(placement: .topBarTrailing)
+                    {
+                        Button (action: {self.showAddComputer.toggle()})
+                        {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+                .sheet(isPresented: $showAddComputer) 
+                {
+                    addComputer(computer: demoComputer, maxIndex: filteredComputerListResult.count)
+                }
+                .sheet(isPresented: $showEditComputer) {
+                    editComputer(computer: filteredComputerListResult[editIndex], index: editIndex)
+                }
             }
         }
     }
