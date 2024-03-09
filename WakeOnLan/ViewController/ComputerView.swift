@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-
-struct ComputerView: View 
+struct ComputerView: View
 {
     var rowComputer : ComputerItem
     
@@ -17,7 +16,7 @@ struct ComputerView: View
         
         HStack
         {
-            Image("computerPlace")
+            Button { doThing() } label: { Image("computerPlace")}
             VStack
             {
                 Text(rowComputer.computerName)
@@ -31,6 +30,15 @@ struct ComputerView: View
         }
         
     }
+    
+  
+    
+    private func doThing() 
+    {
+        Awake.target(device: Awake.Device(MAC: rowComputer.macAddress, BroadcastAddr: rowComputer.ipAddress, Port: UInt16(rowComputer.port)))
+       
+    }
+    
 }
 
 #Preview {

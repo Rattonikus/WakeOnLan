@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View 
+struct MainView: View 
 {
     
     @EnvironmentObject var computerData : ComputerItemStore
@@ -107,6 +107,6 @@ struct ContentView: View
 }
 
 #Preview {
-    ContentView()
+    MainView()
         .environmentObject(ComputerItemStore(computers: loadJSON(from: "computer") as! [ComputerItem]))
 }

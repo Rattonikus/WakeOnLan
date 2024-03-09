@@ -119,11 +119,19 @@
 		9317874F2B846E940006FB4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				93F2DE452B9C223500E06A25 /* Struct */,
 				931787502B846EA10006FB4C /* Awake.swift */,
-				930771562B8470EF00D07CE6 /* ComputerItem.swift */,
 				9307715C2B84772000D07CE6 /* ComputerItemStore.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		93F2DE452B9C223500E06A25 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				930771562B8470EF00D07CE6 /* ComputerItem.swift */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +150,8 @@
 			dependencies = (
 			);
 			name = WakeOnLan;
+			packageProductDependencies = (
+			);
 			productName = WakeOnLan;
 			productReference = 9317873C2B846E300006FB4C /* WakeOnLan.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +180,8 @@
 				Base,
 			);
 			mainGroup = 931787332B846E300006FB4C;
+			packageReferences = (
+			);
 			productRefGroup = 9317873D2B846E300006FB4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

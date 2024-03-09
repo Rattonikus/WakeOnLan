@@ -16,7 +16,7 @@ struct WakeOnLanApp: App
 
         WindowGroup
         {
-            ContentView()
+            MainView()
                 .environmentObject(storedComputers)
 
         }
