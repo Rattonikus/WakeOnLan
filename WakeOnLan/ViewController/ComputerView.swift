@@ -36,7 +36,6 @@ struct ComputerView: View
     private func doThing() 
     {
         Awake.target(device: Awake.Device(MAC: rowComputer.macAddress, BroadcastAddr: rowComputer.ipAddress, Port: UInt16(rowComputer.port)))
-       
     }
     
 }
