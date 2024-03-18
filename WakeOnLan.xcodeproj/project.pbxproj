@@ -17,12 +17,9 @@
 		931787442B846E300006FB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931787432B846E300006FB4C /* Assets.xcassets */; };
 		931787472B846E300006FB4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931787462B846E300006FB4C /* Preview Assets.xcassets */; };
 		931787512B846EA10006FB4C /* Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931787502B846EA10006FB4C /* Awake.swift */; };
-		931F774A2BA1107C0016439E /* WebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931F77492BA1107C0016439E /* WebSockets.swift */; };
-		931F774C2BA115340016439E /* SocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931F774B2BA115340016439E /* SocketTests.swift */; };
-		931F774F2BA127130016439E /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 931F774E2BA127130016439E /* Starscream */; };
 		932807C52B85907D009CDE87 /* addComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932807C42B85907D009CDE87 /* addComputer.swift */; };
 		932807C72B859121009CDE87 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932807C62B859121009CDE87 /* InputField.swift */; };
-		936C24192BA164170002AF5F /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 936C24182BA164170002AF5F /* Starscream */; };
+		935327B12BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935327B02BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift */; };
 		9394DC4B2B85BF3B00043B8A /* editComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9394DC4A2B85BF3B00043B8A /* editComputer.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,10 +35,9 @@
 		931787432B846E300006FB4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931787462B846E300006FB4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		931787502B846EA10006FB4C /* Awake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Awake.swift; path = ../../../../../../Downloads/Awake.swift; sourceTree = "<group>"; };
-		931F77492BA1107C0016439E /* WebSockets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSockets.swift; sourceTree = "<group>"; };
-		931F774B2BA115340016439E /* SocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketTests.swift; sourceTree = "<group>"; };
 		932807C42B85907D009CDE87 /* addComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addComputer.swift; sourceTree = "<group>"; };
 		932807C62B859121009CDE87 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		935327B02BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DO SOMETHING WITH ME, LEARN.swift"; sourceTree = "<group>"; };
 		9394DC4A2B85BF3B00043B8A /* editComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editComputer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,8 +46,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				931F774F2BA127130016439E /* Starscream in Frameworks */,
-				936C24192BA164170002AF5F /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +114,7 @@
 				932807C42B85907D009CDE87 /* addComputer.swift */,
 				932807C62B859121009CDE87 /* InputField.swift */,
 				9394DC4A2B85BF3B00043B8A /* editComputer.swift */,
-				931F774B2BA115340016439E /* SocketTests.swift */,
+				935327B02BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -131,7 +125,6 @@
 				93F2DE452B9C223500E06A25 /* Struct */,
 				931787502B846EA10006FB4C /* Awake.swift */,
 				9307715C2B84772000D07CE6 /* ComputerItemStore.swift */,
-				931F77492BA1107C0016439E /* WebSockets.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,8 +154,6 @@
 			);
 			name = WakeOnLan;
 			packageProductDependencies = (
-				931F774E2BA127130016439E /* Starscream */,
-				936C24182BA164170002AF5F /* Starscream */,
 			);
 			productName = WakeOnLan;
 			productReference = 9317873C2B846E300006FB4C /* WakeOnLan.app */;
@@ -193,7 +184,6 @@
 			);
 			mainGroup = 931787332B846E300006FB4C;
 			packageReferences = (
-				931F774D2BA127130016439E /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = 9317873D2B846E300006FB4C /* Products */;
 			projectDirPath = "";
@@ -224,14 +214,13 @@
 			files = (
 				931787422B846E300006FB4C /* MainView.swift in Sources */,
 				9307715B2B84732D00D07CE6 /* Utilities.swift in Sources */,
-				931F774A2BA1107C0016439E /* WebSockets.swift in Sources */,
 				932807C72B859121009CDE87 /* InputField.swift in Sources */,
-				931F774C2BA115340016439E /* SocketTests.swift in Sources */,
 				931787402B846E300006FB4C /* WakeOnLanApp.swift in Sources */,
 				930771592B84720F00D07CE6 /* ComputerView.swift in Sources */,
 				932807C52B85907D009CDE87 /* addComputer.swift in Sources */,
 				9307715D2B84772000D07CE6 /* ComputerItemStore.swift in Sources */,
 				930771572B8470EF00D07CE6 /* ComputerItem.swift in Sources */,
+				935327B12BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift in Sources */,
 				9394DC4B2B85BF3B00043B8A /* editComputer.swift in Sources */,
 				931787512B846EA10006FB4C /* Awake.swift in Sources */,
 			);
@@ -439,29 +428,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		931F774D2BA127130016439E /* XCRemoteSwiftPackageReference "Starscream" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daltoniam/Starscream.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.8;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		931F774E2BA127130016439E /* Starscream */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 931F774D2BA127130016439E /* XCRemoteSwiftPackageReference "Starscream" */;
-			productName = Starscream;
-		};
-		936C24182BA164170002AF5F /* Starscream */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Starscream;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 931787342B846E300006FB4C /* Project object */;
 }

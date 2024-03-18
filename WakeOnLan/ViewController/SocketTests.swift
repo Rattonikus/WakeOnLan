@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SocketTests: View 
 {
-    var webSocks = WebSockets()
     var body: some View
     {
         Text("send a web socket")

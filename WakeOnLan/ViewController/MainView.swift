@@ -16,7 +16,6 @@ struct MainView: View
     @State var showAddComputer : Bool = false
     @State var showEditComputer : Bool = false
     @State var editIndex : Int = 0
-    var webSocks = WebSockets()
 
     
 
@@ -48,18 +47,11 @@ struct MainView: View
             VStack
             {
                 Text("No computers added")
-                NavigationLink ("Add one now?", destination: SocketTests())
+                Button ("Add one now?", action: {self.showAddComputer.toggle()})
                     .sheet(isPresented: $showAddComputer)
                     {
                         addComputer(computer: demoComputer, maxIndex: filteredComputerListResult.count)
                     }
-                
-                Button(action: conn, label: {
-                    Text("Connect")})
-                Button(action: sendText, label: {
-                    Text("Send")})
-                Button(action: endIt, label: {
-                    Text("End")})
             }
         }
         else
@@ -112,20 +104,7 @@ struct MainView: View
     {
         computerData.computers.remove(atOffsets: offsets)
     }
-    func conn()
-     {
-         webSocks.startSocks()
-     }
-     
-     func sendText()
-     {
-         webSocks.writeText()
-     }
-     
-     func endIt()
-     {
-         webSocks.disconnect()
-     }
+
        
 }
 
