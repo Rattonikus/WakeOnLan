@@ -10,8 +10,16 @@ Can edit/add computers
 Known Bugs:
 
 Weird indexing issue with the way i handle editing
-Mac add seperated only by :
+Mac add seperated only by : (dots are dumb anyways) 
 
-To do:
+In progress:
 
-Sleep on lan (maybe an ssh command?)
+Sleep on lan 
+Originally tried with sockets, now working on less invasive Java companion app
+Prettify the frontend
+
+To-do:
+
+Rewrite with better programming conventions
+Lighter companion app (Languae re-write?) 
+Add safe security practices after logic figured out
