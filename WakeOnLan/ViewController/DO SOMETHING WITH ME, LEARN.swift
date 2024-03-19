@@ -31,8 +31,12 @@ struct ContentView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = body.data(using: .utf8)
+        
+       
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+      /*  URLSession.shared.dataTask(with: request)
+       {
+            data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
                 print("Error: \(error?.localizedDescription ?? "Unknown error")")
                 return
@@ -47,7 +51,8 @@ struct ContentView: View {
             } else {
                 print("Server returned status code: \(response.statusCode)")
             }
-        }.resume()
+        }*/
+            //.resume()
     }
 }
 
