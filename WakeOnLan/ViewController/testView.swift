@@ -12,7 +12,7 @@ struct testView: View
     var testerDo : WakeOnClient
     var body: some View
     {
-        Text(testerDo.testComp(computerItem: demoComputer))
+        Text(testerDo.testComp(computer: demoComputer))
     }
 }
 
