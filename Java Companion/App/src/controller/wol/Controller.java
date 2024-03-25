@@ -1,5 +1,5 @@
 package controller.wol;
-
+import model.wol.*;
 public class Controller 
 {
 	public Controller()
@@ -9,6 +9,7 @@ public class Controller
 	
 	public void start()
 	{
+		Server myServer = new Server(8080, "My Mac");
 		
 	}
 	

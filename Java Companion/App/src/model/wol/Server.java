@@ -16,7 +16,7 @@ public class Server
 	private Controller app;
 	private String errorText;
 	
-	private HttpServer server;
+	private HttpServer httpServer;
 	private int port;
 	private String name;
 	private String clientResponse;
@@ -32,7 +32,9 @@ public class Server
 		
 		try
 		{
-			server = HttpServer.create(new InetSocketAddress(port), 0);
+			httpServer = HttpServer.create(new InetSocketAddress(port), 0);
+			startServer(httpServer);
+
 		}
 		catch (IOException e)
 		{
@@ -41,34 +43,34 @@ public class Server
 		}
 	}
 	
-	private void startServer()
+	private void startServer(HttpServer server)
 	{
 		
 		server.createContext("/WoL", (exchange ->
+		{
+			if ("POST".equals(exchange.getRequestMethod()))
 			{
-				if ("POST".equals(exchange.getRequestMethod()))
+				InputStreamReader inputStream = new InputStreamReader(exchange.getRequestBody(), "utf-8");
+				BufferedReader bufferedReader = new BufferedReader(inputStream);
+				StringBuilder stringBuilder = new StringBuilder();
+				String line; 
+				
+				while ((line = bufferedReader.readLine()) != null)
 				{
-					InputStreamReader inputStream = new InputStreamReader(exchange.getRequestBody(), "utf=8");
-					BufferedReader bufferedReader = new BufferedReader(inputStream);
-					StringBuilder stringBuilder = new StringBuilder();
-					String line; 
+					stringBuilder.append(line);
+				}
+			
+				bufferedReader.close();
+				inputStream.close();
+				String input = stringBuilder.toString();
+	            System.out.println("Received: " + input);
+	               
+				String serverResponse = checkValid(input);
+				exchange.sendResponseHeaders(200, serverResponse.getBytes().length);
 					
-					while ((line = bufferedReader.readLine()) != null)
-					{
-						stringBuilder.append(line);
-					}
-					
-					bufferedReader.close();
-					inputStream.close();
-					String input = stringBuilder.toString();
-					
-					clientResponse = input;
-					String serverResponse = checkValid(input);
-					exchange.sendResponseHeaders(200, serverResponse.getBytes().length);
-					
-					OutputStream outputStream = exchange.getResponseBody();
-					outputStream.write(serverResponse.getBytes());
-					outputStream.close();
+				OutputStream outputStream = exchange.getResponseBody();
+				outputStream.write(serverResponse.getBytes());
+				outputStream.close();
 				}
 				else
 				{
@@ -76,6 +78,11 @@ public class Server
 					app.handleError("Method not allowed");
 				}
 			}));
+		
+		server.setExecutor(null);
+		server.start();
+        System.out.println("Java Server started on portt " + port);
+
 	}
 	
 	private String checkValid(String response)
