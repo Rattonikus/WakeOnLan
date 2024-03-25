@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WakeOnClient
+class WakeOnClient
 {
     
     var testURL = ""
@@ -19,7 +19,7 @@ struct WakeOnClient
         return(computer.computerName + " " + "http://" + computer.ipAddress + ":" + stringPort + "/WoL")
     }
     
-    public mutating func buildRequest(ip: String, port: Int, computer: ComputerItem, reqBody: String)
+    public func buildRequest(computer: ComputerItem, reqBody: String, completion: @escaping (String?) -> Void)
     {
         let stringPort = String(computer.appPort)
         guard
@@ -27,15 +27,14 @@ struct WakeOnClient
         else
         {
             //errorText = "Invalid server!"
-            print("Invalid URL")
             return
         }
-        
+
         let body = "Client: \(reqBody)"
-        var savedResponse = ""
         var clientRequest = URLRequest(url: url)
         clientRequest.httpMethod = "POST"
         clientRequest.httpBody = body.data(using: .utf8)
+
         URLSession.shared.dataTask(with: clientRequest)
         {
             data, response, error in
@@ -49,14 +48,14 @@ struct WakeOnClient
             }
             if response.statusCode == 200
             {
+                self.serverResponse = "hi"
                 if let responseString = String(data: data, encoding: .utf8)
                 {
                     DispatchQueue.main.async
                     {
-                        savedResponse = responseString
-                        //store responseString into a publicly accessible variable here
+                        print(responseString)
+                        completion(responseString)
                     }
-                    
                 }
             }
             else
@@ -65,8 +64,7 @@ struct WakeOnClient
             }
         }
         .resume()
-        serverResponse = savedResponse
     }
-    }
+}
     
     

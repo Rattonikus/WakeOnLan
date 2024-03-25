@@ -67,6 +67,7 @@ public class Server
 				String input = stringBuilder.toString();
 
 				clientResponse = input;
+				System.out.println(input);
 				String serverResponse = checkValid(input);
 				exchange.sendResponseHeaders(200, serverResponse.getBytes().length);
 					

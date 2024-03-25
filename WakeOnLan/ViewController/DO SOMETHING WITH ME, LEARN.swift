@@ -23,7 +23,7 @@ struct ContentView: View {
 
     func sendToServer()
     {
-        guard let url = URL(string: "http://localhost:8080/WoL")
+        guard let url = URL(string: "http://localhost:1026/WoL")
         else
         {
             print("Invalid URL")
