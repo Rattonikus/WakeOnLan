@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="socket/controller/" kind="src" path="Java Companion/socketTest/src"/>
+	<classpathentry kind="output" path="Java Companion/socketTest/bin"/>
+</classpath>

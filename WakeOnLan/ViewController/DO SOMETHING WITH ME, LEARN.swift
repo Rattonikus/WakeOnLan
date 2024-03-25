@@ -22,7 +22,7 @@ struct ContentView: View {
     }
 
     func sendToServer() {
-        guard let url = URL(string: "http://localhost:8000/print") else {
+        guard let url = URL(string: "http://localhost:8000/WoL") else {
             print("Invalid URL")
             return
         }
@@ -34,7 +34,7 @@ struct ContentView: View {
         
        
 
-      /*  URLSession.shared.dataTask(with: request)
+        URLSession.shared.dataTask(with: request)
        {
             data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
@@ -51,8 +51,8 @@ struct ContentView: View {
             } else {
                 print("Server returned status code: \(response.statusCode)")
             }
-        }*/
-            //.resume()
+        }
+            .resume()
     }
 }
 
