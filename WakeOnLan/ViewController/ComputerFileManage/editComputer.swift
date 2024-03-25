@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct addComputer: View
+struct editComputer: View
 {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var storedComputers : ComputerItemStore
@@ -15,14 +15,16 @@ struct addComputer: View
     @State private var ipAddy : String = ""
     @State private var macAddy: String = ""
     @State private var port : String = ""
+    @State private var appPort : String = ""
     @State private var editIndex : Int = 0
     
-    init (computer: ComputerItem? = nil, maxIndex: Int) {
+    init (computer: ComputerItem? = nil, index: Int) {
         _name = State(initialValue: computer?.computerName ?? "")
         _ipAddy = State(initialValue: computer?.ipAddress ?? "")
         _macAddy = State(initialValue: computer?.macAddress ?? "")
         _port = State(initialValue: computer != nil ? String(computer!.port) : "")
-        _editIndex = State(initialValue: maxIndex)
+        _appPort = State(initialValue: computer != nil ? String(computer!.appPort) : "")
+        _editIndex = State(initialValue: index)
     }
     
     var body: some View
@@ -37,6 +39,8 @@ struct addComputer: View
                 InputField(hint: "Mac Address", result: $macAddy)
                 InputField(hint: "Port", result: $port)
                     .keyboardType(.numberPad)
+                InputField(hint: "AppPort", result: $appPort)
+                    .keyboardType(.numberPad)
 
 
             }
@@ -47,11 +51,15 @@ struct addComputer: View
         }
     }
     
-    private func storeComputers() -> Void
-    {
-        let portInt = Int(port)
-        let newComputerItem = ComputerItem(computerName: name, ipAddress: ipAddy, macAddress: macAddy, port: portInt!)
-        storedComputers.computers.insert(newComputerItem, at: editIndex)
+    private func storeComputers() {
+        let portInt = Int(port) ?? 0
+        let appPort = Int(appPort) ?? 0
+        let newComputerItem = ComputerItem(computerName: name, ipAddress: ipAddy, macAddress: macAddy, port: portInt, appPort: appPort)
+        if editIndex >= 0 && editIndex < storedComputers.computers.count {
+            storedComputers.computers[editIndex] = newComputerItem
+        } else {
+            storedComputers.computers.insert(newComputerItem, at: editIndex)
+        }
         dismiss()
     }
     
@@ -63,5 +71,5 @@ struct addComputer: View
 
 #Preview ("Add a car")
 {
-    addComputer(computer: demoComputer, maxIndex: 1)
+    editComputer(computer: demoComputer, index: 0)
 }

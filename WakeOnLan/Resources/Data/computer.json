@@ -5,11 +5,13 @@
         "ipAddress": "127.0.0.1",
         "macAddress": "00:00:00:00:00:00",
         "port": 1
+        "appPort": 1026
     },
     {
         "computerName": "com",
         "ipAddress": "127.0.0.1",
         "macAddress": "00:00:00:00:00:00",
         "port": 1
+        "appPort": 1026
     }
 ]

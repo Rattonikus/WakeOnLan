@@ -46,12 +46,17 @@ struct MainView: View
         {
             VStack
             {
-                Text("No computers added")
-                Button ("Add one now?", action: {self.showAddComputer.toggle()})
-                    .sheet(isPresented: $showAddComputer)
+                NavigationStack
+                {
+                    Text("No computers added")
+                    
+                    Button ("Add one now?", action: {self.showAddComputer.toggle()})
+                        .sheet(isPresented: $showAddComputer)
                     {
                         addComputer(computer: demoComputer, maxIndex: filteredComputerListResult.count)
                     }
+                    NavigationLink("Test", destination: testView(testerDo: WakeOnClient()))
+                }
             }
         }
         else

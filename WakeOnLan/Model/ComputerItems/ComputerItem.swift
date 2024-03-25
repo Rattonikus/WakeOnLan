@@ -13,4 +13,5 @@ struct ComputerItem : Codable
     var ipAddress : String
     var macAddress : String
     var port : Int
+    var appPort : Int
 }
