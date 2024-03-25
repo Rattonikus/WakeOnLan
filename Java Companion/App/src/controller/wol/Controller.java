@@ -10,23 +10,16 @@ public class Controller
 	public void start()
 	{
 		Server myServer = new Server(8080, "My Mac");
+		String test = "I should be the client + ";
+		test += myServer.getResponse();
 		
 	}
-	
-	
-	
-	
-	public static String handleError(Exception e)
-	{
-		String errorMessage = "You encountered an error \n";
-		errorMessage += e;
-		return errorMessage;
-	}
-	
+		
 	public String handleError(String e)
 	{
 		String errorMessage = "You encountered an error \n";
 		errorMessage += e;
+		System.out.println(errorMessage);
 		return errorMessage;
 	}
 }

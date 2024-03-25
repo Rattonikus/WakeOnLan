@@ -7,6 +7,7 @@ import controller.wol.Controller;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.BindException;
 import java.net.InetSocketAddress;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
@@ -39,8 +40,9 @@ public class Server
 		catch (IOException e)
 		{
 			errorText += e;
-			app.handleError(e);
+			app.handleError(errorText);
 		}
+		
 	}
 	
 	private void startServer(HttpServer server)
@@ -63,8 +65,8 @@ public class Server
 				bufferedReader.close();
 				inputStream.close();
 				String input = stringBuilder.toString();
-	            System.out.println("Received: " + input);
-	               
+
+				clientResponse = input;
 				String serverResponse = checkValid(input);
 				exchange.sendResponseHeaders(200, serverResponse.getBytes().length);
 					
@@ -90,5 +92,10 @@ public class Server
 		String validResponse = response + "-" + name;
 		
 		return validResponse;
+	}
+	
+	public String getResponse()
+	{
+		return clientResponse;
 	}
 }
