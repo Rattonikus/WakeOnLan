@@ -10,6 +10,9 @@ public class Controller
 	public void start()
 	{
 		Server myServer = new Server(1026, "My Macer");
+
+		
+		
 		String test = "I should be the client + ";
 		test += myServer.getResponse();
 		
