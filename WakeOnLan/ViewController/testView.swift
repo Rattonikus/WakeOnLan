@@ -11,7 +11,7 @@ struct testView: View
 {
     var testerDo : WakeOnClient
     @State private var inputText = ""
-    @State private var serverResponse = "dd"
+    @State private var serverResponse = "Server Response Here"
     
     var body: some View
     {
