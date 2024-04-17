@@ -19,8 +19,9 @@ struct testView: View
         TextField("Enter text", text: $inputText)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
-        Button("Send to Server") {
-            sendToServer()
+        Button("Send to Server") 
+        {
+            sendToServer(body: inputText)
         }
         .padding()
 
@@ -29,9 +30,9 @@ struct testView: View
         
     }
     
-    func sendToServer()
+    func sendToServer(body: String)
     {
-        testerDo.buildRequest(computer: demoComputer, reqBody: "Request body")
+        testerDo.buildRequest(computer: demoComputer, reqBody: body)
         {
             response in
             if let serverResponse = response 

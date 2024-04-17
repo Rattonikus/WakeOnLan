@@ -1,4 +1,6 @@
 package controller.wol;
+import java.io.IOException;
+
 import model.wol.*;
 public class Controller 
 {
@@ -19,11 +21,23 @@ public class Controller
 		
 	}
 		
-	public String handleError(String e)
+	public String handleError(Exception error)
 	{
 		String errorMessage = "You encountered an error \n";
-		errorMessage += e;
+		errorMessage += error;
 		System.out.println(errorMessage);
 		return errorMessage;
+	}
+	public String handleError(String error)
+	{
+		String errorMessage = "You encountered an error \n";
+		errorMessage += error;
+		System.out.println(errorMessage);
+		return errorMessage;
+	}
+	
+	private void createLog(String toLog)
+	{
+		IOController.saveStringFile(this, "Logs", toLog, "WoLlog");
 	}
 }

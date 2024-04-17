@@ -22,6 +22,7 @@
 		932977C82BB153C900D7334D /* WakeOnClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932977C72BB153C900D7334D /* WakeOnClient.swift */; };
 		932977CA2BB1594C00D7334D /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932977C92BB1594C00D7334D /* testView.swift */; };
 		935327B12BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935327B02BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift */; };
+		938E89542BCF5B160047984F /* ManageComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E89532BCF5B160047984F /* ManageComputer.swift */; };
 		9394DC4B2B85BF3B00043B8A /* editComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9394DC4A2B85BF3B00043B8A /* editComputer.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		932977C72BB153C900D7334D /* WakeOnClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeOnClient.swift; sourceTree = "<group>"; };
 		932977C92BB1594C00D7334D /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		935327B02BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DO SOMETHING WITH ME, LEARN.swift"; sourceTree = "<group>"; };
+		938E89532BCF5B160047984F /* ManageComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageComputer.swift; sourceTree = "<group>"; };
 		9394DC4A2B85BF3B00043B8A /* editComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editComputer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				932807C42B85907D009CDE87 /* addComputer.swift */,
 				932807C62B859121009CDE87 /* InputField.swift */,
 				9394DC4A2B85BF3B00043B8A /* editComputer.swift */,
+				938E89532BCF5B160047984F /* ManageComputer.swift */,
 			);
 			path = ComputerFileManage;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				931787402B846E300006FB4C /* WakeOnLanApp.swift in Sources */,
 				930771592B84720F00D07CE6 /* ComputerView.swift in Sources */,
 				932807C52B85907D009CDE87 /* addComputer.swift in Sources */,
+				938E89542BCF5B160047984F /* ManageComputer.swift in Sources */,
 				9307715D2B84772000D07CE6 /* ComputerItemStore.swift in Sources */,
 				930771572B8470EF00D07CE6 /* ComputerItem.swift in Sources */,
 				935327B12BA7F5FE00311205 /* DO SOMETHING WITH ME, LEARN.swift in Sources */,

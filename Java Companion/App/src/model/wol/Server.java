@@ -67,7 +67,7 @@ public class Server 	//Server object
 		return clientResponse;
 	}
 	
-	public void handleExchange(HttpExchange exchange) throws IOException		//Handle our exchange
+	private void handleExchange(HttpExchange exchange) throws IOException		//Handle our exchange
 	{
 		if ("POST".equals(exchange.getRequestMethod()))		//If client is requests via POST...
 		{
@@ -99,6 +99,10 @@ public class Server 	//Server object
 				exchange.sendResponseHeaders(405, 0);
 				app.handleError("Method not allowed");
 			}
+	}
+	
+	public void handleInput(String input)
+	{
 		
 	}
 	
